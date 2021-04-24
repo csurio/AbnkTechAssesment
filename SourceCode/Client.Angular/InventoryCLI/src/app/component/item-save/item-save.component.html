@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Create Item</h2>
+    <br>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+    <form #itemForm="ngForm" *ngIf="item">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="productId">COD PRODUCT</label>
+                <input type="text" id="productId" name="productId" placeholder="Enter code product " class="form-control" #productId
+                    [(ngModel)]="item.product.id"/>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="quantity">QUANTITY</label>
+                <input type="text" id="quantity" name="quantity" placeholder="Enter product quantity" class="form-control" #quantity
+                    [(ngModel)]="item.quantity"/>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="price">PRICE</label>
+                <input type="text" id="price" name="price" placeholder="Enter product price"
+                    class="form-control" #price [(ngModel)]="item.price"/>
+            </div>
+        </div>
+       
+        <button type="button" class="btn btn-dark" (click)="save()">Save</button>
+        <a class="btn btn-dark mx-4" [routerLink]="[ '/item/list' ]">Back</a>
+        
+    </form>
+</div>

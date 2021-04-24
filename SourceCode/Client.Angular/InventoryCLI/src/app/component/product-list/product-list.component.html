@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Products</h1>
+    <a class="btn btn-dark mb-3" [routerLink]="[ '/product/save' ]">New Product</a>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="text-center" colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <th scope="row"> {{product.id}} </th>
+                <td> {{product.sku}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td class="text-center">
+                  <a class="btn btn-secondary btn-sm" [routerLink]="[ '/product/edit', product.id ]">Edit</a>
+                </td>
+                <td class="text-center">
+                  <a class="btn btn-danger btn-sm" [routerLink]="[ '/product/delete', product.id]">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

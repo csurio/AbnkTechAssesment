@@ -1,0 +1,1643 @@
+{
+	"info": {
+		"_postman_id": "95b385cd-2dee-470a-b676-dc6a5888b9bd",
+		"name": "ABNK-Inventory.API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Swagger",
+			"item": [
+				{
+					"name": "Api_Swagger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/swagger",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"swagger"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetAllProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58683/api/v1/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_GetAllProducts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 20:37:32 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"sku\": \"SKU-PROD-000-OOO1\",\n        \"name\": \"producto 1\",\n        \"description\": \"descripcion Producto 1\"\n    },\n    {\n        \"id\": 2,\n        \"sku\": \"SKU-PROD-000-OOO2\",\n        \"name\": \"producto 2\",\n        \"description\": \"descripcion Producto 2\"\n    },\n    {\n        \"id\": 3,\n        \"sku\": \"SKU-PROD-000-OOO3\",\n        \"name\": \"producto 2\",\n        \"description\": \"descripcion Producto 2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/api/v1/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_GetProductById_2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 21:06:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"sku\": \"SKU-PROD-000-OOO2\",\n    \"name\": \"producto 2\",\n    \"description\": \"descripcion Producto 2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"sku\": \"SKU-PROD-000-OOO4\",\r\n    \"name\": \"producto 4\",\r\n    \"description\": \"descripcion Producto 4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58683/api/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_CreateProduct_Id_5",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 5,\r\n    \"sku\": \"SKU-PROD-000-OOO5\",\r\n    \"name\": \"producto 5\",\r\n    \"description\": \"descripcion Producto 5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 21:02:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"sku\": \"SKU-PROD-000-OOO5\",\n    \"name\": \"producto 5\",\n    \"description\": \"descripcion Producto 5\"\n}"
+						},
+						{
+							"name": "Example_CreateProduct_Id_4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sku\": \"SKU-PROD-000-OOO4\",\r\n    \"name\": \"producto 4\",\r\n    \"description\": \"descripcion Producto 4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 09:23:45 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"sku\": \"SKU-PROD-000-OOO4\",\n    \"name\": \"producto 4\",\n    \"description\": \"descripcion Producto 4\"\n}"
+						},
+						{
+							"name": "Example_CreateProduct_Duplicate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"product Postman 5\",\r\n    \"description\": \"description from Postman 5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 21:04:19 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"An error occurred while updating the entries. See the inner exception for details.\\r\\nDuplicate entry '5' for key 'product.PRIMARY'\\r\\n\"\n}"
+						},
+						{
+							"name": "Example_CreateProduct_Sku_Duplicate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sku\": \"SKU-PROD-000-OOO4\",\r\n    \"name\": \"producto 4\",\r\n    \"description\": \"descripcion Producto 4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 09:25:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"An error occurred while updating the entries. See the inner exception for details.\\r\\nDuplicate entry 'SKU-PROD-000-OOO4' for key 'product.sku_UNIQUE'\\r\\n\"\n}"
+						},
+						{
+							"name": "Example_CreateProduct_BadJson",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 6,\r\n    \"description\": \"description from Postman 6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/problem+json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 21:05:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"|bc782d20-4ed65f966c899cde.\",\n    \"errors\": {\n        \"Name\": [\n            \"The field Product Name is required\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Example_CreateProduct_Without_Name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"\",\r\n    \"description\": \"description from Postman 6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/problem+json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 21:09:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"|bc782d22-4ed65f966c899cde.\",\n    \"errors\": {\n        \"Name\": [\n            \"The field Product Name is required\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 6,\r\n        \"sku\": \"SKU-PROD-000-OOO6\",\r\n        \"name\": \"producto 6\",\r\n        \"description\": \"descripcion Producto 6\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58683/api/v1/product/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_UpdateProduct_OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 3,\r\n        \"sku\": \"SKU-PROD-000-OOO3\",\r\n        \"name\": \"producto 3\",\r\n        \"description\": \"descripcion Producto 3\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 23:43:00 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"sku\": \"SKU-PROD-000-OOO3\",\n    \"name\": \"producto 3\",\n    \"description\": \"descripcion Producto 3\"\n}"
+						},
+						{
+							"name": "Example_UpdateProduct_BadJason",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 3,\r\n        \"description\": \"description from Postman 3\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"3"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/problem+json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 23:51:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"|834e27f3-436f5acf2f516cb8.\",\n    \"errors\": {\n        \"Name\": [\n            \"The field Product Name is required\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Example_UpdateProduct_Diferent_Id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Product 2\",\r\n        \"description\": \"description from Postman 2\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"3"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/problem+json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Apr 2021 23:55:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"Bad Request\",\n    \"status\": 400,\n    \"traceId\": \"|834e27f4-436f5acf2f516cb8.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/api/v1/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete_Product_OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 00:26:20 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Delete_Product_With_References",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/product/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 00:44:06 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"An error occurred while updating the entries. See the inner exception for details.\\r\\nCannot delete or update a parent row: a foreign key constraint fails (`abnk_inventory_db_dev`.`item`, CONSTRAINT `fk_item_product` FOREIGN KEY (`productId`) REFERENCES `product` (`id`))\\r\\n\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Get_All_Items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58683/api/v1/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"item"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_Get_All_Items",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 17:13:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"price\": 11.99,\n        \"quantity\": 12,\n        \"product\": {\n            \"id\": 1,\n            \"sku\": \"SKU-PROD-000-OOO1\",\n            \"name\": \"producto 1\",\n            \"description\": \"descripcion Producto 1\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"price\": 10.5,\n        \"quantity\": 24,\n        \"product\": {\n            \"id\": 2,\n            \"sku\": \"SKU-PROD-000-OOO2\",\n            \"name\": \"producto 2\",\n            \"description\": \"descripcion Producto 2\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get_Item_By_Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/api/v1/item/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_Get_Item_By_Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 22:17:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"price\": 10.5,\n    \"quantity\": 24,\n    \"product\": {\n        \"id\": 2,\n        \"sku\": \"SKU-PROD-000-OOO2\",\n        \"name\": \"producto 2\",\n        \"description\": \"descripcion Producto 2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get_Item_By_Sku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/api/v1/item/sku/SKU-PROD",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"sku",
+								"SKU-PROD"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_Get_Item_By_Sku",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item/sku/SKU-PROD-000-OOO2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"sku",
+										"SKU-PROD-000-OOO2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 22:31:05 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"price\": 10.5,\n        \"quantity\": 24,\n        \"product\": {\n            \"id\": 2,\n            \"sku\": \"SKU-PROD-000-OOO2\",\n            \"name\": \"producto 2\",\n            \"description\": \"descripcion Producto 2\"\n        }\n    }\n]"
+						},
+						{
+							"name": "Ecxample_Get_Item_BySku_All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item/sku/*",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"sku",
+										"*"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Apr 2021 22:45:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"price\": 11.99,\n        \"quantity\": 12,\n        \"product\": {\n            \"id\": 1,\n            \"sku\": \"SKU-PROD-000-OOO1\",\n            \"name\": \"producto 1\",\n            \"description\": \"descripcion Producto 1\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"price\": 10.5,\n        \"quantity\": 24,\n        \"product\": {\n            \"id\": 2,\n            \"sku\": \"SKU-PROD-000-OOO2\",\n            \"name\": \"producto 2\",\n            \"description\": \"descripcion Producto 2\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create_Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ProductId\": 4,\r\n    \"Price\": 0.04,\r\n    \"Quantity\": 0,\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58683/api/v1/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"item"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example_Create_Item_OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Price\": 5.00,\r\n    \"Quantity\": 40,\r\n    \"ProductId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 05:12:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 20,\n    \"productId\": \"3\",\n    \"price\": \"5.00\",\n    \"quantity\": \"40\"\n}"
+						},
+						{
+							"name": "Example_Create_Item_Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ProductId\": 2,\r\n    \"Price\": 0.04,\r\n    \"Quantity\": 0,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 16:27:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource already exists\\r\\n\"\n}"
+						},
+						{
+							"name": "Example_Create_Item_Without_Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Price\": 10.50,\r\n    \"Quantity\": 24,\r\n    \"ProductId\": \"0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 05:00:01 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"An error occurred while updating the entries. See the inner exception for details.\\r\\nCannot add or update a child row: a foreign key constraint fails (`abnk_inventory`.`item`, CONSTRAINT `fk_item_product` FOREIGN KEY (`productId`) REFERENCES `product` (`id`))\\r\\n\"\n}"
+						},
+						{
+							"name": "Example_Create_Item_Product_Not_Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Price\": 10.50,\r\n    \"Quantity\": 24,\r\n    \"ProductId\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 05:09:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"An error occurred while updating the entries. See the inner exception for details.\\r\\nCannot add or update a child row: a foreign key constraint fails (`abnk_inventory`.`item`, CONSTRAINT `fk_item_product` FOREIGN KEY (`productId`) REFERENCES `product` (`id`))\\r\\n\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update_Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/api/v1/item/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update_Item_OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 6,\r\n    \"productId\": \"6\",\r\n    \"price\": \"0.66\",\r\n    \"quantity\": \"0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 16:11:05 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"productId\": \"6\",\n    \"price\": \"0.66\",\n    \"quantity\": \"0\"\n}"
+						},
+						{
+							"name": "Update_Item_Not_Exists",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 6,\r\n    \"productId\": \"8\",\r\n    \"price\": \"99\",\r\n    \"quantity\": \"0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 16:23:09 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Can not UPDATE : Resource Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete_Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58683/api/v1/item/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58683",
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete_Item_Ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:58683/api/v1/item/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "58683",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Apr 2021 16:12:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource deleted successfuly\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

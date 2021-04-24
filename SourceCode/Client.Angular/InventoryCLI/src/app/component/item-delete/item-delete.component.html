@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Delete Item</h1>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+        <a class="btn btn-secondary mb-3 mx-4" [routerLink]="[ '/item/list' ]">Back</a>
+    </div>
+    <div class="form-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are you sure.?
+        </div>
+        <br>
+        <button type="button" class="btn btn-danger mb-3" (click)="delete()">Confirm</button>
+        <a class="btn btn-secondary mb-3 mx-4" [routerLink]="[ '/item/list' ]">Back</a>
+    </div>
+    <form #itemForm="ngForm" *ngIf="item">
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="id">STOCK CODE</label>
+                <input type="text" id="id" name="id" placeholder="Enter code Item " class="form-control" #id
+                    [(ngModel)]="item.id" readonly/>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sku">SKU</label>
+                <input type="text" id="sku" name="sku" placeholder="Enter code SKU " class="form-control" #sku
+                    [(ngModel)]="item.product.sku" readonly/>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" placeholder="Enter  Name " class="form-control" #name
+                    [(ngModel)]="item.product.name" readonly/>
+            </div>
+            <div class="form-group col-md-1">
+                <label for="quantity">QTY</label>
+                <input type="text" id="quantity" name="quantity" placeholder="Enter product quantity" class="form-control" #quantity
+                    [(ngModel)]="item.quantity" readonly/>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="price">PRICE</label>
+                <input type="text" id="price" name="price" placeholder="Enter product price"
+                    class="form-control" #price [(ngModel)]="item.price" readonly/>
+            </div>
+        </div>
+    </form>
+</div>
+ 

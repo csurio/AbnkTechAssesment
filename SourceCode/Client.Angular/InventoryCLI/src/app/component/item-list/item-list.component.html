@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Items</h2>
+    <a class="btn btn-dark mb-3" [routerLink]="[ '/item/save' ]">New Item</a>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">STOCK ID</th>
+                <th scope="col">SKU</th>
+                <th scope="col">NAME</th>
+                <th scope="col">CANTIDAD</th>
+                <th scope="col">PRECIO</th>
+                <th scope="col" class="text-center" colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <th scope="row"> {{item.id}} </th>
+                <td> {{item.product.sku}}</td>
+                <td>{{item.product.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.price | currency: 'USD' | lowercase}}</td>
+                <td class="text-center">
+                  <a class="btn btn-secondary btn-sm" [routerLink]="[ '/item/edit', item.id ]">Edit</a>
+                </td>
+                <td class="text-center">
+                  <a class="btn btn-danger btn-sm" [routerLink]="[ '/item/delete', item.id]">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+ 

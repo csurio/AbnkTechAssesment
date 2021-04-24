@@ -1,0 +1,17 @@
+Entorno de Desarrollo
+
+API
+----------------------
+Visual Studio 2019
+Framework Net Core 5.0
+Sdk: Microsoft.NET.Sdk.Web
+ORM: Microsoft EntityFrameworkCore 5.0.5
+DB: MySql Server version 8.0.23
+
+Cliente  Web
+----------------------
+Visual Studio Code
+Node: v15.14.0
+Npm: 7.7.6
+Angular CLI: 11.2.10
+OS: win32 x64
