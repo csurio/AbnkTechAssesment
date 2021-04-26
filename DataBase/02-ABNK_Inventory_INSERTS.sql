@@ -102,3 +102,10 @@ INSERT INTO abnk_inventory.order_detail
             (id, orderId, productId, quantity, price, createdAt)
 	 VALUES (2 , 1      , 2        , 24      , 8.75 , now()  );
 
+------------------
+-- USER
+------------------
+INSERT INTO abnk_Inventory.user 
+           (id, roleId, firstName      , lastName    , username  , passwordHash                      , registeredAt         , lastLogin) 
+    VALUES (1 , 1     , 'Administrador', 'Aplicacion', 'appadmin', '54ffedb5674760ab72d98d1369798d5e', '2021-04-22 10:13:41', '2021-04-23 20:45:11');
+
