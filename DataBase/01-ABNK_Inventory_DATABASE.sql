@@ -5,20 +5,20 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema ABNK_Inventory
+-- Schema abnk_inventory
 -- -----------------------------------------------------
 -- 
 -- 
-DROP SCHEMA IF EXISTS `ABNK_Inventory` ;
+DROP SCHEMA IF EXISTS `abnk_inventory` ;
 
 -- -----------------------------------------------------
--- Schema ABNK_Inventory
+-- Schema abnk_inventory
 --
 -- 
 -- 
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ABNK_Inventory` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci ;
-USE `ABNK_Inventory` ;
+CREATE SCHEMA IF NOT EXISTS `abnk_inventory` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci ;
+USE `abnk_inventory` ;
 
 -- -----------------------------------------------------
 -- Table `product`
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `sku` VARCHAR(100) NOT NULL,
   `name` VARCHAR(75) NOT NULL,
   `description` TEXT NULL DEFAULT NULL,
-  `createdAt` DATETIME NOT NULL DEFAULT now(),
+  `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `sku_UNIQUE` (`sku` ASC) VISIBLE)
@@ -49,9 +49,10 @@ CREATE TABLE IF NOT EXISTS `item` (
   `quantity` INT NOT NULL DEFAULT 0,
   `createdAt` DATETIME NOT NULL DEFAULT now(),
   `updatedAt` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `productId_UNIQUE` (`productId` ASC) VISIBLE,
+  PRIMARY KEY (`id`),															
+  UNIQUE INDEX `productId_UNIQUE` (`productId` ASC) VISIBLE,															
   INDEX `fk_item_product_idx` (`productId` ASC) VISIBLE,
+  
   CONSTRAINT `fk_item_product`
     FOREIGN KEY (`productId`)
     REFERENCES `product` (`id`)
@@ -125,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `quantity` SMALLINT NOT NULL DEFAULT 0,
   `price` DECIMAL(10,2) NOT NULL DEFAULT 0.00,
   `total` DECIMAL(10,2) NOT NULL DEFAULT (price* quantity),
-  `createdAt` DATETIME NOT NULL DEFAULT now(),
+  `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_order_detail_product_idx` (`productId` ASC) VISIBLE,
@@ -183,6 +184,46 @@ CREATE TABLE IF NOT EXISTS `product_category` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+				  												  
+																						
+
+-- -----------------------------------------------------
+-- Table `user`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `user` ;
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `roleId` INT NOT NULL DEFAULT 0,
+  `firstName` VARCHAR(50) NULL DEFAULT NULL,
+  `lastName` VARCHAR(100) NULL,
+  `username` VARCHAR(50) NOT NULL,
+  `passwordHash` VARCHAR(32) NOT NULL,
+  `registeredAt` DATETIME NULL,
+  `lastLogin` DATETIME NULL,
+  PRIMARY KEY (`id`));
+
+
+-- -----------------------------------------------------
+-- Table `log`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `log` ;
+
+CREATE TABLE IF NOT EXISTS `log` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `action` INT NOT NULL,
+  `entity` VARCHAR(50) NOT NULL,
+  `recordId` INT NOT NULL,
+  `createBy` INT NOT NULL,
+  `createAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `content` TEXT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_create_at_id_idx` (`createBy` ASC) VISIBLE,
+  CONSTRAINT `fk_create_by_id`
+    FOREIGN KEY (`createBy`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
